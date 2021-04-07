@@ -1,9 +1,9 @@
 {% extends "blog/base.html"%}
 {% load crispy_forms_tags%}
 {% block content%}
-    <div class="content-section">
-        <form method="POST">
-            {% csrf_token%} <!-- used to provide extra sequity to the form and is mandatory. -->
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token%} <!-- used to provide extra sequity to the form and is mandatory. -->
             <fieldset class="form-froup">
                 <legend class="border-bottom mb-4">Join Today</legend>
                 {{ form|crispy }} 
@@ -14,7 +14,7 @@
             </div>
         </form>
         <div class="border-top pt-3">
-            <small class="text-muted">Already have an Account? <a class="ml-2" href="#"></a></small>
+        <small class="text-muted">Already have an Account? <a class="ml-2" href="{% url 'login' %}">Login Now</a></small>
         </div>
-    </div>
+</div>
 {% endblock content %}
